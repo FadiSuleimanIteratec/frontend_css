@@ -1,0 +1,41 @@
+html, body {
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+}
+
+.background {
+    background-image: url("frontend_css_task3_background.jpg");
+    background-size: cover;
+    height: 100%;
+}
+
+.background .page {
+    background-color: #009688;
+    background-size: cover;
+    height: 100%;
+    opacity: 0.5;
+}
+
+.background .page .header {
+    height: 20%;
+}
+
+.background .page .container {
+    display: flex;
+    height: 80%;
+}
+
+.background .page .container .first_container {
+    width: 50%;
+}
+
+.background .page .container .second_container {
+    width: 50%;
+}
+
+@media only screen and (max-width: 700px) {
+    .background .page .container {
+        flex-direction: column;
+    }
+}
