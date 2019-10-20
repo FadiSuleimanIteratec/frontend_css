@@ -6,6 +6,39 @@
     --height-header: 10%;
     --width-left: 60%;
     --width-right: calc(100% - var(--width-left));
+    --margin: 10px;
+    --complete-width-without-margin: calc(100% - 2*var(--margin));
+}
+
+.margin {
+    margin: var(--margin);
+}
+
+.black {
+    color: black;
+}
+
+.submit {
+    border: 0;
+    color: white;
+    background-color: black;
+    padding: 10px 40px;
+    font-size: 10px;
+}
+
+.textField {
+    width: var(--complete-width-without-margin);
+    margin: 5px 0;
+    border: #009688;
+    padding: 10px;
+}
+
+.textField::placeholder {
+    color: #009688;
+}
+
+.white {
+    color: white;
 }
 
 html, body {
@@ -46,7 +79,6 @@ html, body {
 
 .page .header .left {
     width: var(--width-left);
-    color: white;
     font-family: 'Bungee Outline';
     font-weight: bold;
 }
@@ -55,12 +87,6 @@ html, body {
     width: var(--width-right);
     display: flex;
     justify-content: flex-end;
-}
-
-.page .header .right a {
-    background-color: rgba(0, 0, 0, 0);
-    color: white;
-    border: 0;
 }
 
 .page .header .right a:hover {
@@ -80,14 +106,6 @@ html, body {
     width: var(--width-right);
 }
 
-.page .container .first_container .text1 {
-    color: white;
-}
-
-.page .container .first_container .text2 {
-    color: black;
-}
-
 @media only screen and (max-width: 500px) {
     .page {
         width: 100%;
@@ -98,12 +116,12 @@ html, body {
     }
 
     .page .container .first_container {
-        width: 100%;
+        width: var(--complete-width-without-margin);
         height: 50%;
     }
 
     .page .container .second_container {
-        width: 100%;
+        width: var(--complete-width-without-margin);
         height: 50%;
     }
 
