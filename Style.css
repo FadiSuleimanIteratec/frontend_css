@@ -4,7 +4,7 @@
 :root {
     --width-page: 70%;
     --height-header: 10%;
-    --width-left: 60%;
+    --width-left: 55%;
     --width-right: calc(100% - var(--width-left));
     --margin: 10px;
     --complete-width-without-margin: calc(100% - 2*var(--margin));
@@ -56,6 +56,9 @@ html, body {
 
 .small {
     font-size: small;
+}
+
+p.small {
     margin: 5px 0;
 }
 
@@ -84,24 +87,31 @@ html, body {
 
 .page .header {
     display: flex;
+    justify-content: space-between;
     height: var(--height-header);
 }
 
 .page .header .left {
-    width: var(--width-left);
     font-family: 'Bungee Outline';
     font-weight: bold;
+    margin-top: 0;
+    margin-left: var(--margin);
 }
 
 .page .header .right {
-    width: var(--width-right);
+    width: 250px;
     font-family: 'Roboto';
     display: flex;
     justify-content: space-between;
 }
 
+.page .header .right a {
+    cursor: pointer;
+    padding: 5px 20px;
+}
+
 .page .header .right a:hover {
-    border: 1px white;
+    border: solid white;
 }
 
 .page .container {
