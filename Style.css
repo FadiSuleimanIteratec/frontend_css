@@ -2,12 +2,13 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
 :root {
-    --width-page: 80%;
+    --width-page: 70%;
     --height-header: 10%;
     --width-left: 60%;
     --width-right: calc(100% - var(--width-left));
     --margin: 10px;
     --complete-width-without-margin: calc(100% - 2*var(--margin));
+    --complete-height: 80%;
 }
 
 .margin {
@@ -31,6 +32,11 @@
     margin: 5px 0;
     border: #009688;
     padding: 10px;
+    font-size: 10px;
+}
+
+textarea {
+    height: 50px;
 }
 
 .textField::placeholder {
@@ -45,17 +51,21 @@ html, body {
     display: flex;
     justify-content: center;
     height: 100%;
-    overflow: hidden;
     margin: 0;
+}
+
+.small {
+    font-size: small;
+    margin: 5px 0;
 }
 
 .background {
     position: absolute;
     left: 0;
     top: 0;
-    height: 100%;
+    height: var(--complete-height);
     width: 100%;
-    background-image: url("frontend_css_task3_background.jpg");
+    background: url("frontend_css_task3_background.jpg") center;
     background-size: cover;
     z-index: -1;
 }
@@ -69,7 +79,7 @@ html, body {
 
 .page {
     width: var(--width-page);
-    height: 100%;
+    height: var(--complete-height);
 }
 
 .page .header {
@@ -85,8 +95,9 @@ html, body {
 
 .page .header .right {
     width: var(--width-right);
+    font-family: 'Roboto';
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
 }
 
 .page .header .right a:hover {
@@ -95,7 +106,14 @@ html, body {
 
 .page .container {
     display: flex;
+    font-family: 'Roboto';
     height: 80%;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .page .container .first_container {
@@ -106,7 +124,7 @@ html, body {
     width: var(--width-right);
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 400px) {
     .page {
         width: 100%;
     }
