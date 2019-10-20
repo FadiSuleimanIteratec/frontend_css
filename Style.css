@@ -1,7 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Bungee+Outline&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
+:root {
+    --width-page: 80%;
+    --height-header: 10%;
+    --width-left: 60%;
+    --width-right: calc(100% - var(--width-left));
+}
+
 html, body {
+    display: flex;
+    justify-content: center;
     height: 100%;
     overflow: hidden;
     margin: 0;
@@ -26,32 +35,36 @@ html, body {
 }
 
 .page {
+    width: var(--width-page);
     height: 100%;
 }
 
 .page .header {
     display: flex;
-    height: 20%;
+    height: var(--height-header);
 }
 
-.page .header .link {
-    flex-grow: 1;
+.page .header .left {
+    width: var(--width-left);
     color: white;
     font-family: 'Bungee Outline';
     font-weight: bold;
 }
 
 .page .header .right {
-    flex-grow: 1;
+    width: var(--width-right);
+    display: flex;
+    justify-content: flex-end;
 }
 
-.page .header .right button {
+.page .header .right a {
     background-color: rgba(0, 0, 0, 0);
     color: white;
     border: 0;
 }
 
-.page .header .right button:hover {
+.page .header .right a:hover {
+    border: 1px white;
 }
 
 .page .container {
@@ -60,11 +73,11 @@ html, body {
 }
 
 .page .container .first_container {
-    width: 50%;
+    width: var(--width-left);
 }
 
 .page .container .second_container {
-    width: 50%;
+    width: var(--width-right);
 }
 
 .page .container .first_container .text1 {
@@ -75,7 +88,11 @@ html, body {
     color: black;
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 500px) {
+    .page {
+        width: 100%;
+    }
+
     .page .container {
         flex-direction: column;
     }
